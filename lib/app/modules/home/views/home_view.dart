@@ -13,10 +13,20 @@ class HomeView extends GetView<HomeController> {
         title: const Text('HomeView'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                  onPressed: () => controller.getData(),
+                  child: const Text("Get data")),
+              Obx(()=> Text(
+                controller.cars.length.toString(),
+                style: TextStyle(fontSize: 20),
+              )),
+            ],
+          ),
         ),
       ),
     );
