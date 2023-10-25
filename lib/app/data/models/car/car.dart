@@ -20,6 +20,7 @@ class PriceConverter implements JsonConverter<double,String> {
 class Car with _$Car {
 
   factory Car({
+    required int id,
     @JsonKey(name: "car") required String brand,
     @JsonKey(name: "car_model") required String model,
     @PriceConverter() required double price,
